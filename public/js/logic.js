@@ -1,7 +1,17 @@
 //function for request(fetch)
 const connect=function(method,url,cb){
+const xhr =new XMLHttpRequest()
+xhr.onreadystatechange=function() {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+  var response = xhr.responseText;
+  callback(response);
+}
 
 }
+xhr.open(method, url);
+xhr.send();
+}
+
 
 //function return lastword from inputvalue
 const lastWord=function(str){
@@ -9,7 +19,8 @@ const lastWord=function(str){
 }
 
 //Function filter the array from response
-const filterArray=function(arr){
+const filterArray=function(arr,value){
+const result = arr.filter(word => word.indexOf(value) == 0)
 
 }
 
