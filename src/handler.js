@@ -53,9 +53,9 @@ function handler(request, response){
   }
 
 else if(endpoint == '/search'){
-  console.log(path.join(__dirname, '/words.txt'));
+
   response.writeHead(302, {'Location' : '/search'});
-  fs.readFile(path.join(__dirname, '/words_dictionary.json'), function(error, file){
+  fs.readFile(path.join(__dirname, '/data.json'), function(error, file){
     response.writeHead(200, {'Content-Type' : 'application/json'});
     if(error){
       console.log(error);

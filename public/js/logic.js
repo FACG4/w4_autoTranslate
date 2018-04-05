@@ -30,5 +30,14 @@ const getFirstFive =function(arr){
 return arr.slice(0,10)
 }
 
+const inputWithotLastFn=function (text) {
+  if (text.split(" ").length>0) {
+    console.log("logic",text.split(" ").slice(0,text.split(" ").length-1));
+    return text.split(" ").slice(0,text.split(" ").length-1)
 
-module.exports={connect,lastWord,filterArray,getFirstFive}
+  }
+
+
+}
+
+// module.exports={connect,lastWord,filterArray,getFirstFive};
