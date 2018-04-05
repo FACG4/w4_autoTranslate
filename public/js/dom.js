@@ -25,47 +25,34 @@ const renderAuto=function(arr){
     var option =create('option');
     option.textContent=item;
     append('#option',option);
-
   })
-
-
 }
 
 //function render translation results
 const renderRes =function(transtext,){
   const output="<p class='parText'>"+transtext+"</p>";
    select("#result").innerHTML=(output)
-// document.querySelector("#result").innerHTML=(output)
 }
-
-
-
 
 //addlistener for textarea
 var txtArea=document.getElementsByClassName("textToTranslate")[0];
 txtArea.addEventListener('keyup',(event) => {
-var inputValue=txtArea.value;
-// var last=lastWord(inputValue)
-  console.log(inputValue);
-
-// var inputWithotLast=inputWithotLastFn(last)
+  var inputValue=txtArea.value;
   connect(inputValue,"POST","/search", function(response){
   var array = Object.values(response);
-  // var filterdArray=getFirstFive(filterArray(array,inputValue));
   var filterdArray = getFirstFive(array);
   console.log(filterdArray);
   renderAuto(filterdArray)
-  // console.log("dom",filterdArray,inputWithotLast);
-})
+  })
 });
 
 
 
 
 
-//addlistener for translate button
+// addlistener for translate button
 // select('#button').addEventListener('submit',(event)=>{
 //   var searchvalue=inputValue
-//
-//
+
+
 // })
