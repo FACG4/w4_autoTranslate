@@ -41,7 +41,6 @@ txtArea.addEventListener('keyup',(event) => {
   connect(inputValue,"POST","/search", function(response){
   var array = Object.values(response);
   var filterdArray = getFirstFive(array);
-  console.log(filterdArray);
   renderAuto(filterdArray)
   })
 });
@@ -51,8 +50,14 @@ txtArea.addEventListener('keyup',(event) => {
 
 
 // addlistener for translate button
-// select('#button').addEventListener('submit',(event)=>{
-//   var searchvalue=inputValue
+select('#button').addEventListener('click',(event)=>{
+  var searchValue=document.getElementsByClassName("textToTranslate")[0].value.split(" ").join(",")
+  var lang=select(".targetLang").value.toLowerCase();
+  var url="https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180405T132340Z.88c397559ed36b7a.07342fdcd14b4a4b939140d7dd43d3f1a84935a9&text="+searchValue+"&lang="+lang
+  connect(null,"GET",url,function (response) {
+  var result=response.text[0]
+renderRes(result)
+})
 
 
-// })
+})
