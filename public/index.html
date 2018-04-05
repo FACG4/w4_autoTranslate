@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Auto Translate</title>
 </head>
@@ -13,20 +14,20 @@
 
 
   <form id="formId" class="form" action="index.html" method="post">
-  <label for="input">write your word</label>
+  <label for="input" id="lableid">write your word</label>
   <input list="option" id="input" name="myBrowser" class="textToTranslate" placeholder="Text to translate"/>
   <datalist id="option">
 
   </datalist>
 
 
-
+<br>
 
   <select class="targetLang">
       <option selected disabled>Target</option>
       <option value="AF">Afrikanns</option>
       <option value="SQ">Albanian</option>
-      <option value="AR">Arabic</option>
+      <option value="AR" selected>Arabic</option>
       <option value="HY">Armenian</option>
       <option value="EU">Basque</option>
       <option value="BN">Bengali</option>
@@ -97,6 +98,7 @@
       <option value="CY">Welsh</option>
       <option value="XH">Xhosa</option>
 </select>
+<br>
   <button type="button" name="button" id="button" >Translate</button>
 
   </form>
