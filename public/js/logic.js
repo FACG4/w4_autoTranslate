@@ -1,15 +1,15 @@
 //function for request(fetch)
-const connect=function(method,url,cb){
+const connect=function(value,method,url,cb){
 const xhr =new XMLHttpRequest()
 xhr.onreadystatechange=function() {
   if (xhr.readyState == 4 && xhr.status == 200) {
-  var response = xhr.responseText;
+  var response = JSON.parse(xhr.responseText);
   cb(response);
 }
 
 }
 xhr.open(method, url);
-xhr.send();
+xhr.send(value);
 }
 
 
@@ -21,7 +21,10 @@ return str.split(" ")[str.split(" ").length-1].toLowerCase()
 
 //Function filter the array from response
 const filterArray=function(arr,value){
-return arr.filter(word => word.indexOf(value) == 0)
+  // console.log(value);
+
+  return arr.filter(word => word.indexOf(value) == 0)
+
 
 }
 
@@ -40,4 +43,4 @@ const inputWithotLastFn=function (text) {
 
 }
 
-// module.exports={connect,lastWord,filterArray,getFirstFive};
+module.exports={connect,lastWord,filterArray,getFirstFive};

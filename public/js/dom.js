@@ -19,11 +19,11 @@ const append =function(parent,tag){
 }
 
 //function render autocomplete list
-const renderAuto=function(arr,prevValue){
+const renderAuto=function(arr){
   select("#option").innerHTML="";
   arr.map(item=>{
     var option =create('option');
-    option.textContent=prevValue+" "+item;
+    option.textContent=item;
     append('#option',option);
 
   })
@@ -43,19 +43,19 @@ const renderRes =function(transtext,){
 
 //addlistener for textarea
 var txtArea=document.getElementsByClassName("textToTranslate")[0];
-console.log(txtArea);
-txtArea.addEventListener('keypress',(event) => {
-  console.log("hi");
+txtArea.addEventListener('keyup',(event) => {
 var inputValue=txtArea.value;
-var last=lastWord(inputValue)
-var inputWithotLast=inputWithotLastFn(last)
-connect("GET","/search", function(response){
-var array = Object.keys(JSON.parse(response));
-var filterdArray=getFirstFive(filterArray(array,inputValue));
-renderAuto(filterdArray,inputWithotLast.join(""))
+// var last=lastWord(inputValue)
+  console.log(inputValue);
 
-
-console.log("dom",filterdArray,inputWithotLast);
+// var inputWithotLast=inputWithotLastFn(last)
+  connect(inputValue,"POST","/search", function(response){
+  var array = Object.values(response);
+  // var filterdArray=getFirstFive(filterArray(array,inputValue));
+  var filterdArray = getFirstFive(array);
+  console.log(filterdArray);
+  renderAuto(filterdArray)
+  // console.log("dom",filterdArray,inputWithotLast);
 })
 });
 
