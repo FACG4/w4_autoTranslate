@@ -9,8 +9,8 @@ const create = function(tag){
 }
 
 //function select element
-const select = function(element){
-
+const select = function(selector){
+document.querySelector(selector)
 }
 
 //function append child
@@ -19,11 +19,23 @@ const append =function(parent,tag){
 }
 
 //function render autocomplete list
-const renderAuto=function(){
+const renderAuto=function(arr){
+  const ul=create('ul');
+  arr.map(item=>{
+    const li = create('li');
+    li.textContent=item ;
+    ul.appendChild(li);
+
+  })
+  const autoList1=select('#autoList');
+  autoList1.appendChild(ul);
 
 }
 
 //function render translation results
+const renderRes =function(){
+  const renderResult=function(arr)
+  
 const renderRes =function(transtext){
   const output="<p class='parText'>"+transtext+"</p>";
   // use select("#result").innerHTML=(output)
