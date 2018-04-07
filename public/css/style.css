@@ -8,79 +8,84 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),url("http://wallpaperlepi.com/wp-content/uploads/2015/01/Macro-Book-Wallpaper-Computer.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("http://getwallpapers.com/wallpaper/full/5/2/4/1184974-book-pages-as-wallpaper-1920x1200-iphone.jpg");
   background-size: cover;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
 
 }
 section{
-  display:flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  height: 60vh;
-  align-items: center;
-
+  margin-top:2px;
+  margin-left: auto;
+  margin-right: auto;
+  height:60%;
+    width: 50%;
 }
 form{
-  width: 70%;
-
-  /* flex-direction: column; */
-
+  width: 70%
 }
-#inputDiv{
-height: auto;
-text-align: center;
+
+span{
+  color:#827717
+}
+.container
+{
 display: flex;
-justify-content: center;
-text-align: center;
-
+flex-direction: column;
+align-items: center;
 }
+
 #lableid{
   font-size: 40px;
-  width: 80%;
+  width: 70%;
   font-weight: 600;
+  color:#CDDC39;
 
 }
 #input{
-  width: 100%;
-  margin: 20px auto;
-  height: 50px;
-
-
-}
-.targetLang ,#input {
+  width: 90%;
   margin: 10px auto;
-
+  height: 40px;
+  background:#F5F5F5;
+  padding-left: 5px;
+  border: 2px outset #BDBDBD;
+  border-radius: 5px ;
 }
+
 .targetLang{
   width:50%;
   padding:5px;
-  height: 40px;
-  margin:10px auto;
-  background:rgb(217, 218, 188);
+  height: 30px;
+  margin:5px auto;
+  background:#EFEBE9;
   font-size: 15px;
-  text-align: center;
-  border:  1px solid #9E9E9E;
-
+  border: 2px outset #BDBDBD;
+  border-radius: 5px
 }
 #button{
   width:50%;
-  height:40px;
   padding:5px;
-  margin:10px auto;
-  background:rgb(217, 218, 188);
-  border:  1px solid #9E9E9E;
+  height: 30px;
+  margin:5px auto;
+  background:#EFEBE9;
   font-size: 15px;
+  border: 2px outset #BDBDBD;
+  border-radius: 5px
 }
-select option {
 
-}
+
+
 #result{
-  border: 1px solid #272727;
-  align-self: flex-end;
-  background-color: white;
+
   width: 60%;
-  height: 30%;
-  text-align: center;
+  height:auto;
   font-size: 2rem;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1px;
+    background:#BDBDBD;
+    color:#424242
 }
