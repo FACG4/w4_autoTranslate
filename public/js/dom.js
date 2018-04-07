@@ -30,8 +30,10 @@ const renderAuto=function(arr){
 
 //function render translation results
 const renderRes =function(transtext,){
-  const output="<p class='parText'>"+transtext+"</p>";
-   select("#result").innerHTML=(output)
+  const paragraph = create('p')
+  paragraph.setAttribute('class','parText');
+  paragraph.textContent = transtext;
+  select("#result").appendChild(paragraph);
 }
 
 //addlistener for textarea
@@ -40,7 +42,7 @@ txtArea.addEventListener('keyup',(event) => {
   var inputValue=txtArea.value;
   connect(inputValue,"POST","/search", function(response){
   var array = Object.values(response);
-  var filterdArray = getFirstFive(array);
+    var filterdArray = getFirstTen(array);
   renderAuto(filterdArray)
   })
 });
