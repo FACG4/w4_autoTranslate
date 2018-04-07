@@ -24,16 +24,17 @@ const filterArray=function(arr,value){
 }
 
 //Function to get the five first elements from filtered array
-const getFirstFive =function(arr){
+const getFirstTen =function(arr){
 return arr.slice(0,10)
 }
 
 // Function remove the last word
 const inputWithotLastFn=function (text) {
   if (text.split(" ").length>0) {
-    console.log("logic",text.split(" ").slice(0,text.split(" ").length-1));
-    return text.split(" ").slice(0,text.split(" ").length-1)
+    return text.split(" ").slice(0,text.split(" ").length-1);
   }
 }
 
-module.exports={connect,lastWord,filterArray,getFirstFive};
+if (typeof module != 'undefined'){
+  module.exports = { connect, lastWord, filterArray, getFirstTen};
+}
