@@ -7,8 +7,8 @@ const logic=require('./../public/js/logic.js');
 
 //test  lastWord function
 test("test for lastWord function ", (t)=>{
-  const acual= logic.lastWord('string word') ;
-  const expected= 'word';
+  const acual= logic.lastWord('string word')
+  const expected= 'word'
   t.equal(acual, expected, "function should equal word");
   t.end();
 });
