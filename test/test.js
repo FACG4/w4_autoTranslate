@@ -16,7 +16,7 @@ test("test for lastWord function ", (t)=>{
 //test  filterArray function
 test("test for filterArray function ", (t)=>{
   const acual= logic.filterArray(['ten','two','twelve'], 'tw') ;
-  const expected= ['two','twelve'];
+  const expected= [3,'twelve'];//'two'
   t.deepEqual(acual, expected, "function should equal ['two','twelve']");
   t.end();
 });
